@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- I NEED AN ASIDE -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/wxi7seg.css">
+
+</head>
+
+<body>
+  <header id="header">
+    <div>
+      <img src="https://codehs.com/uploads/7b39fd1be755f31ca2e9d53a2c0cc6d7">
+      <h1>Habit Tracker</h1>
+    </div>
+    <p id="date"><strong>Today's Date:</strong></p>
+  </header>
+
+  <section id="habit">
+    <div class="habit-wrapper">
+      <h2>Habbits:</h2>
+      <p>No current <strong>Habits</strong> Create one <strong>Here.</strong></p>
+    </div>
+    <div class="habit-wrapper">
+
+      <button id="add">Add Habit</button>
+      <input placeholder="Add a habit here" id="add-habit" name="habit" class="form-handling">
+    </div>
+    <div class="container"></div>
+  </section>
+
+  <section id="progress">
+    <h2><strong>Progress</strong> made So far:</h2>
+    <p id="habit-counter"> You've completed 0 <strong>Habits</strong> today!</p>
+    <div class="streak">
+      <span>️<img src="https://codehs.com/uploads/b07a7715f49fcb734be302ec27b2331a"></span>
+      <p id="streak">Total Streak:</p>
+    </div>
+  </section>
+
+  <footer id="settings">
+    <h2>Settings</h2>
+    <div class="container">
+     <p>Display:</p>
+     <button id="toggle-dark">Toggle Dark Mode</button>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
