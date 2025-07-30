@@ -1,0 +1,251 @@
+:root {
+  --main-color: white;
+  --sec-color: #f8f9fa;
+  --main-accent: #495057;
+  --sec-accent: #20c997;
+  --text-black: black;
+  --text-white: white;
+  --transition: 0.3s ease-in-out;
+  --box-shadow: 0px 8px 32px rgb(146, 146, 146);
+}
+
+body.dark-mode {
+  --main-color: #000000;
+  --sec-color: #262626;
+  --main-accent: #d4d5d7;
+  --sec-accent: #20c997;
+  --text-black: white;
+  --text-white: black;
+  --box-shadow: 0px 8px 32px rgb(65, 65, 65);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+* {
+  font-family: "dm-sans", sans-serif;
+  font-style: normal;
+}
+
+strong {
+  color: var(--sec-accent);
+}
+
+.finish-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 33px;
+  width: 33px;
+  border-radius: 16.5px;
+  border: 1px solid var(--text-black);
+}
+
+.delete-btn {
+  height: 33px;
+  width: auto;
+}
+
+.finish-btn-click {
+  background-color: var(--sec-accent);
+  box-shadow: 0px 8px 32px rgb(76, 235, 124);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  color: var(--text-white);
+  border: none;
+  text-decoration: none;
+}
+
+button {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 8px 32px rgb(146, 146, 146);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: none;
+  transition: var(--transition);
+  background-color: var(--main-accent);
+  color: var(--text-white);
+  font-size: 1rem;
+  display: block;
+}
+button:hover {
+  opacity: 0.9;
+}
+
+header,
+section,
+footer,
+.habit {
+  box-shadow: 0px 8px 32px rgb(146, 146, 146);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: none;
+  padding: 1rem;
+  background-color: var(--sec-color);
+  color: var(--text-black);
+  border-left: 10px solid var(--main-accent);
+}
+
+.habit {
+  width: auto;
+  margin: 1rem;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.habit .button-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+.habit button {
+  background-color: var(--main-color) !important;
+  height: -moz-fit-content;
+  height: fit-content;
+  float: right;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+body {
+  background: var(--main-color);
+  width: 90%;
+  min-height: 80vh;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-areas: "header header header" "habit habit progress" "settings settings settings";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+#header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+}
+#header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+#header p {
+  font-size: 2rem;
+  margin: 2rem;
+}
+#header img {
+  height: 50px;
+  width: auto;
+}
+
+#habit {
+  grid-area: habit;
+}
+#habit h2 {
+  font-size: 2rem;
+}
+#habit .habit-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+#habit .habit-wrapper p {
+  font-size: 1.3rem;
+}
+#habit .habit-wrapper button {
+  padding: 1rem;
+}
+#habit .habit-wrapper input {
+  box-shadow: 0px 8px 32px rgb(146, 146, 146);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: none;
+  border-radius: 0.75em;
+  border: none;
+  padding: 1rem;
+  width: 80%;
+  background-color: var(--main-color);
+}
+#habit .habit-wrapper input:focus {
+  outline: 1px solid var(--sec-accent);
+}
+
+#progress {
+  grid-area: progress;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#progress .streak {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#progress .streak #streak {
+  font-size: 2rem;
+}
+#progress .streak #streak strong {
+  color: orange;
+  font-size: 2.5rem;
+}
+#progress .streak span img {
+  height: 200px;
+  width: auto;
+}
+
+#settings {
+  grid-area: settings;
+}
+#settings .container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 90%;
+}
+#settings .container p {
+  display: inline;
+  font-size: 1.5rem;
+}
+#settings .container button {
+  display: inline;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    grid-template-areas: "header" "habit" "progress" "settings";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .habit-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .habit-wrapper input {
+    width: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */
